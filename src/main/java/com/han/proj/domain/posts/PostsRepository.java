@@ -6,3 +6,6 @@ public interface PostsRepository extends JpaRepository<Posts, Long> { // 상속�
 
 
 }
+
+
+// DAO
