@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 @Entity  // JPA의 annotation, 테이블과 링크될 클래스임을 명시
-public class Posts {
+public class Posts extends BaseTimeEntity{      // BaseTimeEntity를 상속받음으로써 앞으로 추가, 수정될 entity의 등록,수정시간 고민할 필요없음
 
     @Id  // 해당 table의 Primary Key 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY)
