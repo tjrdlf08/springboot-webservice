@@ -1,5 +1,6 @@
 package com.han.proj.web;
 
+import com.han.proj.config.auth.dto.SessionUser;
 import com.han.proj.service.posts.PostsService;
 import com.han.proj.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -7,15 +8,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {                          // 머스테치 스타터로 인해 문자열 반환시 앞의 경로, 뒤의 파일 확장자는 자동지정
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
+
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if(user != null)  { model.addAttribute("userName", user.getName()); }
+
         return "index";                                 // ==> src/main/resources/templates/index.mustache
     }
 
