@@ -37,6 +37,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-mustache')
 
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')   // 소셜 로그인 등 클라이언트 입장에서 필요  oauth2-client,jose 둘 다 관리
-    
+
+    compile('org.springframework.session:spring-session-jdbc')
+
+    testCompile('org.springframework.security:spring-security-test')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
