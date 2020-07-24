@@ -27,7 +27,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY                  # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY
     bucket: h-spring-webservice-build # s3 버킷
-    region: ap-northeast-2
+    region: ap-northeast-2c
     skip_cleanup: true
     acl: private # zip 파일 접근형식
     local_dir: deploy # befor_deploy에 생성한 dir
@@ -41,7 +41,7 @@ deploy:
     bundle_type: zip                                # 압축 확장자
     application: h-spring-webservice                # 웹 콘솔에서 등록한 codedeploy 애플리케이션
     deployment_group: h-spring-webservice-group     # 배포 그룹
-    region: ap-northeast-2
+    region: ap-northeast-2c
     wait-until-deployed: true
 
 
