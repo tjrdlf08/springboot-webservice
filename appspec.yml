@@ -1,6 +1,6 @@
 version: 0.0        # code deploy ver
 os: linux
 files:
-  - source: /       # codedeploy에서 전당해준 파일 중 dest로 이동시킬 대상 --> 루트경로(/)면 전체 파일을 이동
-    destination: /home/ec2-user/app/step2/zip         # source에 지정된 파일을 받을 위치
+  - source: /                                         # codedeploy에서 전당해준 파일 중 dest로 이동시킬 대상 --> 루트경로(/)면 전체 파일을 이동
+    destination: /home/ec2-user/app/step2/zip/         # source에 지정된 파일을 받을 위치
     overwrite: yes                                    # 기존 파일이 있으면 덮어쓸지말지
